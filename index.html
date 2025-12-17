@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HairMuse - AI Hairstyle & Color Consultant</title>
+    <meta name="description" content="Redefine yourself with HairMuse. The #1 AI Aesthetic Consultant for hairstyles and personal color analysis.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #FDFBF7;
+            --text-main: #1A1A1A;
+            --text-sub: #666;
+            --gold-accent: #D4AF37;
+            --line-color: #E5E5E5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky; top: 0; background: rgba(253,251,247,0.95); backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+        .nav-links a {
+            margin-left: 24px; text-decoration: none; color: var(--text-sub); font-size: 14px; cursor: pointer;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); font-weight: 600; }
+        .btn-download {
+            background: var(--text-main); color: #fff !important; padding: 8px 20px; border-radius: 100px;
+        }
+
+        /* Sections Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; display: none; }
+        .container.active { display: block; }
+
+        /* --- HOME SECTION --- */
+        .hero { text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: var(--text-sub); max-width: 500px; margin: 0 auto 40px; }
+        .app-store-badge {
+            display: inline-block; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; font-size: 16px;
+        }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 80px;
+        }
+        .feature-card h3 { font-size: 24px; margin-bottom: 10px; }
+        .feature-card p { font-size: 14px; color: var(--text-sub); }
+
+        /* --- LEGAL & SUPPORT STYLES --- */
+        .legal-content h1 { font-size: 36px; margin-bottom: 40px; border-bottom: 1px solid var(--text-main); padding-bottom: 20px; }
+        .legal-content h2 { font-size: 24px; margin-top: 30px; margin-bottom: 10px; }
+        .legal-content h3 { font-size: 18px; font-weight: 700; margin-top: 20px; font-family: 'Manrope', sans-serif; }
+        .legal-content p { margin-bottom: 15px; color: #444; font-size: 14px; }
+        .legal-content ul { margin-bottom: 15px; padding-left: 20px; font-size: 14px; color: #444; }
+        
+        .contact-email { color: var(--gold-accent); font-weight: 600; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 40px; border-top: 1px solid var(--line-color);
+            margin-top: 80px; font-size: 12px; color: var(--text-sub);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HairMuse</div>
+        <div class="nav-links">
+            <a onclick="showPage('home')" class="active">Home</a>
+            <a onclick="showPage('support')">Support</a>
+            <a onclick="showPage('privacy')">Privacy</a>
+            <a onclick="showPage('terms')">Terms</a>
+            <a href="#" class="btn-download">Get App</a>
+        </div>
+    </nav>
+
+    <!-- PAGE: HOME -->
+    <div id="home" class="container active">
+        <div class="hero">
+            <h1>Redefine Your<br>Signature Look</h1>
+            <p>Your personal AI aesthetic consultant. Discover your perfect hairstyle and personal color season in seconds.</p>
+            <a href="#" class="app-store-badge">Download on the App Store</a>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Virtual Salon</h3>
+                <p>Try on 100+ trending hairstyles with hyper-realistic AI technology. See it before you cut it.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Personal Color</h3>
+                <p>Find your season (Spring, Summer, Autumn, Winter) and discover the palette that makes you glow.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Face Analysis</h3>
+                <p>Get professional advice based on your unique facial features and proportions.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE: SUPPORT -->
+    <div id="support" class="container legal-content">
+        <h1>Technical Support</h1>
+        <p>Need help? Our concierge team is here for you.</p>
+        
+        <h3>Frequently Asked Questions</h3>
+        
+        <h4>1. How do I cancel my subscription?</h4>
+        <p>Subscriptions are managed directly by Apple. To cancel:</p>
+        <ul>
+            <li>Go to your iPhone <strong>Settings</strong> > Tap your <strong>Name</strong> (Apple ID).</li>
+            <li>Tap <strong>Subscriptions</strong>.</li>
+            <li>Select <strong>HairMuse</strong> and tap <strong>Cancel Subscription</strong>.</li>
+        </ul>
+
+        <h4>2. Why is my generated photo blurry?</h4>
+        <p>To ensure the best results, please upload a photo with good lighting, facing the camera directly, and without glasses or hats. High-definition results are available for Premium members.</p>
+
+        <h4>3. How do I delete my data?</h4>
+        <p>We automatically delete your uploaded photos from our servers within 24 hours. You can also manually delete your history in the "Lookbook" tab within the app.</p>
+
+        <h3>Contact Us</h3>
+        <p>For further assistance, please email us at:</p>
+        <p class="contact-email">support@hairmuse.app</p>
+        <p><em>Please allow up to 48 hours for a response.</em></p>
+    </div>
+
+    <!-- PAGE: PRIVACY POLICY -->
+    <div id="privacy" class="container legal-content">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated: November 24, 2024</strong></p>
+        
+        <p>At HairMuse ("we", "our"), your privacy is our top priority. This policy outlines how we collect, use, and protect your personal data, specifically regarding facial data used for AI analysis.</p>
+
+        <h2>1. Collection of Face Data</h2>
+        <p>To provide our hairstyle try-on and color analysis features, we collect the image you upload. Our AI technology analyzes facial landmarks (such as eyes, nose, mouth outline) to map hairstyles onto your photo accurately.</p>
+
+        <h2>2. Use of Face Data</h2>
+        <p>The facial data is used <strong>solely</strong> for the purpose of generating the processed image within the app. We do not use your face data to identify you personally, nor do we use it for authentication or advertising purposes.</p>
+
+        <h2>3. Data Retention & Deletion</h2>
+        <p><strong>We do not store your face data permanently.</strong></p>
+        <ul>
+            <li>Your original photos and generated results are stored temporarily on our secure cloud servers to deliver the service.</li>
+            <li>All data is <strong>automatically deleted after 24 hours</strong>.</li>
+            <li>You can manually delete your data at any time within the App's "Lookbook" section.</li>
+        </ul>
+
+        <h2>4. Third-Party Sharing</h2>
+        <p>We do not sell, trade, or transfer your facial data to outside parties. We utilize trusted cloud providers (e.g., Supabase, AWS) and AI inference partners solely for data processing. These partners adhere to strict data protection standards.</p>
+    </div>
+
+    <!-- PAGE: TERMS OF USE -->
+    <div id="terms" class="container legal-content">
+        <h1>Terms of Use</h1>
+        <p><strong>Last Updated: November 24, 2024</strong></p>
+        
+        <p>By downloading or using HairMuse, you agree to these terms.</p>
+
+        <h2>1. Premium Subscription</h2>
+        <ul>
+            <li>HairMuse offers "Weekly" and "Yearly" subscriptions that grant access to all hairstyles, colors, and HD downloads.</li>
+            <li><strong>Payment:</strong> Payment will be charged to your iTunes Account at confirmation of purchase.</li>
+            <li><strong>Auto-Renewal:</strong> Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.</li>
+            <li><strong>Cancellation:</strong> You can manage and cancel your subscriptions by going to your App Store Account Settings after purchase.</li>
+        </ul>
+
+        <h2>2. AI Disclaimer</h2>
+        <p>HairMuse uses Artificial Intelligence to generate hairstyle simulations. While we strive for realism, the results are for reference only. We are not responsible if the actual result at a hair salon differs from the AI simulation.</p>
+
+        <h2>3. User Content</h2>
+        <p>You agree not to upload content that is illegal, offensive, or violates the rights of others. We reserve the right to terminate accounts that violate this policy.</p>
+    </div>
+
+    <footer>
+        &copy; 2024 HairMuse AI Studio. All rights reserved.
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.container').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
+            
+            // Show target page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav state (simple logic)
+            const navs = document.querySelectorAll('.nav-links a');
+            if(pageId === 'home') navs[0].classList.add('active');
+            if(pageId === 'support') navs[1].classList.add('active');
+            if(pageId === 'privacy') navs[2].classList.add('active');
+            if(pageId === 'terms') navs[3].classList.add('active');
+            
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
